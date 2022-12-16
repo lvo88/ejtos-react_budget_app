@@ -1,12 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
     const { budget } = useContext(AppContext);
+    let [newBudget, setBudget] = useState(budget)
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £{budget}</span>
+            <span>Budget: £
+                <input
+                    type='number'
+                    id='newBudget'
+                    value={newBudget}
+                    onChange={e => setBudget(parseInt(e.target.value) + parseInt(9))}>
+                </input>
+            </span>
         </div>
     );
 };
