@@ -12,11 +12,14 @@ const Budget = () => {
                     type='number'
                     id='newBudget'
                     value={newBudget}
-                    onChange={e => setBudget(parseInt(e.target.value) + parseInt(9))}>
+                    step={10}
+                    onChange={event => setBudget(event.target.value)}>
                 </input>
             </span>
         </div>
     );
 };
+
+
 
 export default Budget;
